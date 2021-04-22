@@ -49,7 +49,10 @@ namespace HelloWorldAzureDemo
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello World! This Is Iman");
+                });
             });
         }
     }
